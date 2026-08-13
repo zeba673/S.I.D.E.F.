@@ -8,8 +8,8 @@
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-06111B?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-132A3D?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-0D2030?style=flat-square&logo=supabase&logoColor=55B985)](https://supabase.com/)
-[![Vercel](https://img.shields.io/badge/Vercel-Ready-06111B?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-0D2030?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Proxmox VE](https://img.shields.io/badge/Proxmox_VE-Infrastructure-06111B?style=flat-square&logo=proxmox&logoColor=E57000)](https://www.proxmox.com/)
 
 </div>
 
@@ -49,13 +49,14 @@ flowchart LR
 ## Arquitectura del MVP
 
 ```text
+Proxmox VE                 Infraestructura de virtualización
+VM o contenedor LXC        Entorno aislado de ejecución
 Next.js + TypeScript       Interfaz y lógica de aplicación
-Supabase / PostgreSQL      Persistencia, autenticación y políticas RLS
-Vercel                     Despliegue demostrativo
+PostgreSQL                 Persistencia y políticas de acceso
 CSV / JSON                 Ingesta controlada inicial
 ```
 
-La arquitectura prioriza las capas gratuitas de Vercel y Supabase durante el desarrollo. El modelo de datos y la lógica de riesgo permanecen portables a un VPS o una instalación propia de PostgreSQL.
+La arquitectura objetivo es autoalojada. Proxmox VE administra la infraestructura; S.I.D.E.F. se ejecuta dentro de una máquina virtual o contenedor LXC, mientras PostgreSQL conserva los datos en una instancia controlada por el operador.
 
 ## Estado actual
 
@@ -64,7 +65,7 @@ La arquitectura prioriza las capas gratuitas de Vercel y Supabase durante el des
 - [x] Grafo fiscal-patrimonial demostrativo.
 - [x] Criterios de riesgo configurables.
 - [x] Motor de cálculo con prueba automatizada.
-- [x] Esquema inicial de Supabase con políticas RLS.
+- [ ] Esquema y autenticación adaptados a PostgreSQL autoalojado.
 - [ ] Autenticación conectada al entorno productivo.
 - [ ] Importación real de conjuntos de datos autorizados.
 - [ ] Conectores a fuentes públicas seleccionadas.
@@ -76,20 +77,14 @@ La arquitectura prioriza las capas gratuitas de Vercel y Supabase durante el des
 
 - Node.js 20 o superior
 - pnpm
-- Un proyecto de Supabase para habilitar persistencia
+- PostgreSQL será necesario al habilitar la persistencia
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Abrí [http://localhost:3000](http://localhost:3000). Sin credenciales de Supabase, la aplicación funciona con el escenario sintético incluido.
-
-### Supabase
-
-1. Creá un proyecto.
-2. Aplicá [`supabase/migrations/202608020001_initial.sql`](supabase/migrations/202608020001_initial.sql).
-3. Copiá `.env.example` como `.env.local` y completá las variables públicas.
+Abrí [http://localhost:3000](http://localhost:3000). La aplicación funciona actualmente con el escenario sintético incluido; la conexión a PostgreSQL autoalojado forma parte de la siguiente etapa.
 
 ```bash
 pnpm test
@@ -101,7 +96,6 @@ pnpm build
 ```text
 app/                    Interfaz Next.js
 lib/                    Datos demostrativos y motor de riesgo
-supabase/migrations/    Esquema PostgreSQL y seguridad RLS
 Documentación/          Antecedentes y marco legal del proyecto
 Palantir-plantillas/    Referencias visuales, no assets de producto
 .impeccable/            Sistema y decisiones de diseño

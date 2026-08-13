@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Next.js deployed on Vercel with Supabase for PostgreSQL, authentication, and storage. The MVP targets the free tiers during private development and demonstration, while remaining portable to a VPS and self-hosted PostgreSQL later.
+Next.js and PostgreSQL deployed on self-hosted infrastructure managed with Proxmox VE. The application runs inside an isolated virtual machine or LXC container, with storage, access controls, backups, and network policy operated directly by the project owner.
 
 ## Users
 
