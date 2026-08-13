@@ -6,10 +6,10 @@
 
 **Inteligencia fiscal basada en evidencia, relaciones y revisión humana.**
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-06111B?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-132A3D?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-0D2030?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Proxmox VE](https://img.shields.io/badge/Proxmox_VE-Infrastructure-06111B?style=flat-square&logo=proxmox&logoColor=E57000)](https://www.proxmox.com/)
+[![Qwen3 VL](https://img.shields.io/badge/Qwen3--VL--32B-Multimodal-132A3D?style=flat-square)](https://huggingface.co/Qwen/Qwen3-VL-32B-Instruct)
+[![Gemma 4](https://img.shields.io/badge/Gemma_4--31B-Multimodal-0D2030?style=flat-square&logo=google&logoColor=white)](https://ai.google.dev/gemma/docs/core/model_card_4)
 
 </div>
 
@@ -53,10 +53,12 @@ Proxmox VE                 Infraestructura de virtualización
 VM o contenedor LXC        Entorno aislado de ejecución
 Next.js + TypeScript       Interfaz y lógica de aplicación
 PostgreSQL                 Persistencia y políticas de acceso
+Qwen3-VL-32B-Instruct      Análisis multimodal de documentos e imágenes
+Gemma 4 31B                Razonamiento multimodal y contraste de resultados
 CSV / JSON                 Ingesta controlada inicial
 ```
 
-La arquitectura objetivo es autoalojada. Proxmox VE administra la infraestructura; S.I.D.E.F. se ejecuta dentro de una máquina virtual o contenedor LXC, mientras PostgreSQL conserva los datos en una instancia controlada por el operador.
+La arquitectura objetivo es autoalojada. Proxmox VE administra la infraestructura; S.I.D.E.F. se ejecuta dentro de máquinas virtuales o contenedores LXC, mientras PostgreSQL conserva los datos en una instancia controlada por el operador. La capa de inteligencia artificial prevista utiliza Qwen3-VL-32B-Instruct y Gemma 4 31B para procesar texto e imágenes, extraer evidencia de documentos y contrastar resultados antes de la revisión humana.
 
 ## Estado actual
 
@@ -66,6 +68,7 @@ La arquitectura objetivo es autoalojada. Proxmox VE administra la infraestructur
 - [x] Criterios de riesgo configurables.
 - [x] Motor de cálculo con prueba automatizada.
 - [ ] Esquema y autenticación adaptados a PostgreSQL autoalojado.
+- [ ] Inferencia multimodal autoalojada con Qwen3-VL-32B-Instruct y Gemma 4 31B.
 - [ ] Autenticación conectada al entorno productivo.
 - [ ] Importación real de conjuntos de datos autorizados.
 - [ ] Conectores a fuentes públicas seleccionadas.

@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Next.js and PostgreSQL deployed on self-hosted infrastructure managed with Proxmox VE. The application runs inside an isolated virtual machine or LXC container, with storage, access controls, backups, and network policy operated directly by the project owner.
+Next.js and PostgreSQL deployed on self-hosted infrastructure managed with Proxmox VE. The application runs inside isolated virtual machines or LXC containers, with storage, access controls, backups, and network policy operated directly by the project owner. The planned multimodal AI layer uses self-hosted Qwen3-VL-32B-Instruct and Google DeepMind Gemma 4 31B models for text-and-image evidence processing and cross-model result validation.
 
 ## Users
 
@@ -34,6 +34,7 @@ The operator imports controlled datasets and consults selected live public sourc
 - Thresholds include a tolerance margin and contextual adjustments because income and economic activity may be incompletely observed.
 - Every alert preserves its inputs, configuration version, source provenance, calculation, and review status.
 - The MVP supports controlled CSV/JSON imports and selected live connectors.
+- The planned multimodal layer processes documents and images with Qwen3-VL-32B-Instruct and Gemma 4 31B; model output remains evidence for human review, never an autonomous determination.
 - Free-tier limits require curated datasets rather than population-scale ingestion.
 - The central landing workflow remains deliberately open between search and an alert inbox; the MVP will expose both and validate usage before choosing one.
 
