@@ -113,6 +113,10 @@ Palantir-plantillas/    Referencias visuales, no assets de producto
 
 S.I.D.E.F. está pensado como una herramienta de apoyo a la investigación. El acceso a datos identificables, su conservación y cualquier comunicación a terceros deben responder a una finalidad legítima, fuentes autorizadas, controles de acceso y normativa aplicable.
 
+## Licencia y confidencialidad
+
+Este repositorio contiene software propietario y confidencial. **No se concede permiso de uso, copia, modificación, distribución ni explotación comercial** sin autorización previa y escrita del titular. Consultá la [licencia propietaria](LICENSE) para conocer las condiciones aplicables.
+
 ---
 
 <div align="center">
