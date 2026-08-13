@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-04T00:00:00-03:00",
+  "title": "Design System: S.I.D.E.F.",
+  "extensions": {
+    "colorMeta": {
+      "midnight": { "role": "neutral", "displayName": "Navy medianoche", "canonical": "#06111b", "tonalRamp": ["#020609", "#06111b", "#10283a", "#26465c", "#526e80", "#829aa8", "#bdcbd2", "#eef5f9"] },
+      "selection-blue": { "role": "primary", "displayName": "Azul de selección", "canonical": "#3e9be8", "tonalRamp": ["#061a2b", "#0e3152", "#174d7c", "#246fae", "#3e9be8", "#74b9ee", "#b2d8f6", "#eef8fe"] },
+      "analysis-canvas": { "role": "neutral", "displayName": "Lienzo analítico", "canonical": "#dfe5e9", "tonalRamp": ["#1c2429", "#344149", "#56656e", "#7e8c95", "#a7b2b9", "#c7d0d5", "#dfe5e9", "#f3f6f7"] },
+      "alert-red": { "role": "tertiary", "displayName": "Rojo de alerta", "canonical": "#ef5357", "tonalRamp": ["#31090b", "#5b1518", "#8b2529", "#be393e", "#ef5357", "#f58184", "#f9b5b7", "#fdeced"] }
+    },
+    "typographyMeta": {
+      "title": { "displayName": "Título operativo", "purpose": "Encabezados compactos de panel." },
+      "body": { "displayName": "Cuerpo denso", "purpose": "Datos, evidencia y relaciones." },
+      "label": { "displayName": "Etiqueta técnica", "purpose": "Columnas, estado y metadatos." }
+    },
+    "shadows": [{ "name": "drawer-overlay", "value": "-18px 0 44px rgba(0,0,0,.4)", "purpose": "Sólo para el drawer modal de criterios." }],
+    "motion": [],
+    "breakpoints": [{ "name": "stack-inspector", "value": "1199px" }, { "name": "mobile-stack", "value": "760px" }]
+  },
+  "components": [
+    {
+      "name": "Action Button",
+      "kind": "button",
+      "refersTo": "action-button",
+      "description": "Acción compacta de chrome operativo.",
+      "html": "<button class=\"ds-action\">CRITERIOS</button>",
+      "css": ".ds-action{height:28px;padding:0 8px;border:1px solid #385064;border-radius:0;background:#0a1824;color:#eef5f9;font:600 11px Arial,sans-serif}.ds-action:hover{border-color:#3e9be8}.ds-action:focus-visible{outline:2px solid #69baff;outline-offset:-2px}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Búsqueda global integrada a la barra.",
+      "html": "<input class=\"ds-search\" placeholder=\"Buscar personas, CUIT, entidades...\">",
+      "css": ".ds-search{width:360px;height:34px;padding:0 10px;border:1px solid #3a5265;border-radius:0;background:#06111b;color:#eef5f9;font:13px Arial,sans-serif}.ds-search:focus{border-color:#3e9be8;outline:0}.ds-search::placeholder{color:#91a5b4}"
+    },
+    {
+      "name": "High Risk Tag",
+      "kind": "chip",
+      "refersTo": "risk-tag",
+      "description": "Estado de riesgo alto.",
+      "html": "<span class=\"ds-risk\">ALTO</span>",
+      "css": ".ds-risk{display:inline-flex;align-items:center;height:20px;padding:2px 5px;border:1px solid #ef5357;border-radius:0;background:rgba(239,83,87,.08);color:#ef5357;font:700 9px Arial,sans-serif}.ds-risk:focus-visible{outline:2px solid #69baff}"
+    },
+    {
+      "name": "Active Rail Item",
+      "kind": "nav",
+      "description": "Estado activo del rail lateral.",
+      "html": "<button class=\"ds-rail\" aria-label=\"Cola de trabajo\">⌕</button>",
+      "css": ".ds-rail{width:58px;height:54px;border:0;border-radius:0;background:#123454;color:#74bfff;box-shadow:inset 3px 0 #3e9be8}.ds-rail:hover{background:#132a3d}.ds-rail:focus-visible{outline:2px solid #69baff;outline-offset:-2px}"
+    },
+    {
+      "name": "Evidence Container",
+      "kind": "card",
+      "description": "Contenedor plano de evidencia.",
+      "html": "<section class=\"ds-evidence\"><strong>DISCREPANCIA PATRIMONIAL</strong><p>Brecha estimada&nbsp; $92,6 M</p></section>",
+      "css": ".ds-evidence{width:280px;padding:11px;border:1px solid #284052;border-radius:0;background:#0a1824;color:#eef5f9;font:10px Arial,sans-serif}.ds-evidence strong{color:#91a5b4;font-size:9px}.ds-evidence p{margin:10px 0 0}.ds-evidence:focus-within{border-color:#3e9be8}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Sala de Situación",
+    "overview": "S.I.D.E.F. se comporta como una herramienta de investigación estatal: sobria, continua y concentrada en relaciones verificables.",
+    "keyCharacteristics": ["Paneles contiguos y bordes de un píxel.", "Tipografía sans condensada, pequeña y legible.", "Color reservado para selección, tipología y estados.", "Datos de demostración rotulados como sintéticos."],
+    "rules": [
+      { "name": "Signal Color", "body": "Los acentos expresan estado o semántica; nunca decoran superficies completas.", "section": "colors" },
+      { "name": "Density", "body": "La jerarquía surge de peso, contraste y alineación; no de titulares grandes.", "section": "typography" },
+      { "name": "Flat Operations", "body": "Los paneles permanecen al mismo nivel y no flotan como tarjetas.", "section": "elevation" }
+    ],
+    "dos": ["Do mantener visibles cola, relaciones y evidencia cuando el ancho lo permita.", "Do usar color para estado, selección o tipo de entidad.", "Do rotular toda información ficticia como demostrativa o sintética."],
+    "donts": ["Don't introducir tarjetas de KPI, gradientes, glassmorphism o sombras ambientales.", "Don't usar serif ni ilustraciones decorativas.", "Don't confundir una señal analítica con una conclusión de fraude."]
+  }
+}

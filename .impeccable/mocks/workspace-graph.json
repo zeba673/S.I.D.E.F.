@@ -1,0 +1,7 @@
+{
+  "approved": true,
+  "surface": "app/page.tsx",
+  "direction": "Palantir-adjacent investigation console",
+  "composition": "Work queue left, relationship graph center, evidence inspector right, case timeline below",
+  "source": ".impeccable/mocks/workspace-graph.png"
+}
